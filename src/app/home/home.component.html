@@ -1,0 +1,97 @@
+<main class="bg-white">
+  <section class="section-hero">
+    <div class="image-container">
+      <img
+        class="image"
+        src="../../assets/images/main/vcs_main_image.jpg"
+        alt="Elite Mente"
+      />
+      <div class="image-tint"></div>
+    </div>
+    <div class="text-container">
+      <h1 class="tyopg_h1">
+        <span class="title">Elite Mente LLC.</span>
+        <span class="subtitle">A Vish Consulting Services Company</span>
+      </h1>
+      <p class="subtitle-2">
+        Leading Provider of Staffing & Recruitment Services
+      </p>
+      <div class="action-button">
+        <app-buttons
+          label="View All Jobs"
+          [hasIcon]="false"
+          buttonType="secondary"
+          routerLink="/jobs"
+          size="lg"
+        ></app-buttons>
+      </div>
+    </div>
+  </section>
+  <section class="section-container">
+    <div class="relative mx-auto">
+      <div class="cards-grid-3-container">
+        <div class="image-card">
+          <div class="flex-shrink-0">
+            <img
+              class="image"
+              src="../../assets/images/main/staffing_work_img.jpg"
+              alt=""
+            />
+          </div>
+          <div class="body">
+            <div class="flex-1">
+              <p class="title">Our Expertise</p>
+              <p class="content">
+                Focusing on manufacturing organizations we provide your
+                workforce with the skilled labor and office/administrative roles
+                that are crucial to your business. Navigate through staffing
+                peaks with ease as we connect you with hard to find seasonal
+                workers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="flex-shrink-0">
+            <img
+              class="image"
+              src="../../assets/images/main/business_main_page.jpg"
+              alt=""
+            />
+          </div>
+          <div class="body">
+            <div class="flex-1">
+              <p class="title">Clients &amp; Partners</p>
+              <p class="content">
+                By offering an array of services working within our clients
+                budgets, we are able to provide top candidates and incredible
+                business solutions to meet our clients needs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="flex-shrink-0">
+            <img
+              class="image"
+              src="../../assets/images/main/job-seeker.jpg"
+              alt=""
+            />
+          </div>
+          <div class="body">
+            <div class="flex-1">
+              <p class="title">Jobs</p>
+              <p class="content">
+                Enhance your career with Elite Mente!  Check out our latest
+                jobs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-cta></app-cta>
+</main>

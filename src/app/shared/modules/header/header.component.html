@@ -1,0 +1,112 @@
+<nav class="header-1">
+  <div class="page-container">
+    <div class="inner-container">
+      <div class="flex">
+        <div class="mobile-menu-icon">
+          <mat-icon [matMenuTriggerFor]="mobileMenu">menu</mat-icon>
+          <mat-menu #mobileMenu="matMenu" class="mobile-drop-menu">
+            <ng-container *ngFor="let item of navbarItems">
+              <ng-container *ngIf="!item.children">
+                <button
+                  mat-menu-item
+                  [routerLink]="item.link"
+                  class="links"
+                  aria-current="page"
+                >
+                  {{ item.label }}
+                </button>
+              </ng-container>
+              <ng-container *ngIf="item.children">
+                <button
+                  mat-menu-item
+                  [matMenuTriggerFor]="mobileSubMenu"
+                  [routerLink]="item.link"
+                  class="links"
+                  aria-current="page"
+                >
+                  {{ item.label }}
+                </button>
+                <mat-menu
+                  #mobileSubMenu="matMenu"
+                  class="mobile-drop-menu-small"
+                >
+                  <button
+                    mat-menu-item
+                    *ngFor="let child of item.children"
+                    [routerLink]="child.link"
+                  >
+                    {{ child.label }}
+                  </button>
+                </mat-menu>
+              </ng-container>
+            </ng-container>
+          </mat-menu>
+        </div>
+        <div class="logo" routerLink="/home">
+          <img
+            class="mobile"
+            src="../../assets/images/logos/elite_logo_big.png"
+            alt="Elite Mente"
+          />
+          <img
+            class="desktop"
+            src="../../assets/images/logos/elite_logo_big.png"
+            alt="Elite Mente"
+          />
+        </div>
+        <div class="menu-bar">
+          <ng-container *ngFor="let item of navbarItems">
+            <ng-container *ngIf="!item.children">
+              <button
+                mat-button
+                [routerLink]="item.link"
+                class="links"
+                routerLinkActive="selected"
+                aria-current="page"
+              >
+                {{ item.label }}
+              </button>
+            </ng-container>
+            <ng-container *ngIf="item.children">
+              <button
+                mat-button
+                [matMenuTriggerFor]="subMenu"
+                class="cursor-pointer links"
+                routerLinkActive="selected"
+                aria-current="page"
+              >
+                {{ item.label }}
+                <mat-icon class="text-base ml-2">keyboard_arrow_down</mat-icon>
+              </button>
+              <mat-menu #subMenu="matMenu" class="mat-top-menu">
+                <button
+                  mat-menu-item
+                  *ngFor="let child of item.children"
+                  [routerLink]="child.link"
+                >
+                  {{ child.label }}
+                </button>
+              </mat-menu>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <div class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
+          <div class="relative ml-3">
+            <div>
+              <app-buttons
+                label="Sign In"
+                iconLocation="left"
+                [hasIcon]="true"
+                size="normal"
+                buttonType="transparent"
+                iconType="lock"
+              ></app-buttons>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
