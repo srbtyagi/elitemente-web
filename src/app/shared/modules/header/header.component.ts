@@ -84,4 +84,8 @@ export class HeaderComponent {
   ];
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  signIn() {
+    window.location.href = 'http://app.elitemente.com/';
+  }
 }

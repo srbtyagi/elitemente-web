@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cta',
   templateUrl: './cta.component.html',
   styleUrls: ['./cta.component.scss'],
 })
-export class CtaComponent implements OnInit {
+export class CtaComponent {
   constructor() {}
 
-  ngOnInit(): void {}
+  register() {
+    window.location.href = 'http://app.elitemente.com/auth/register';
+  }
 }
